@@ -43,6 +43,15 @@ def fundelete():
         screen = vr
         display_screen.insert(0,vr)
 
+def square():
+        global screen
+        vr = display_screen.get()
+        vr=int(vr)
+        a=vr*vr
+        display_screen.delete(0,END)
+        display_screen.insert(0,a)
+        screen = str(a)
+
 display_screen = ttk.Entry(root,font=("verdana",23),justify=RIGHT,textvariable= v)
 display_screen.grid(row=0,columnspan=40,ipady=5)
 display_screen.insert(0,"0")
@@ -104,5 +113,7 @@ add_button.grid(row=7,column=3)
 per_button = Button(root,text="%",height=2,width=12,relief="solid",activebackground="brown",activeforeground="white",command = lambda:cmd("%"))
 per_button.grid(row=7,column=0)
 
+sq_button = Button(root,text="x²",height=2,width=12,relief="solid",activebackground="brown",activeforeground="white",command=lambda:square())
+sq_button.grid(row=7,column =1)
 
 root.mainloop()
