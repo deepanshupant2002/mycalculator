@@ -46,7 +46,7 @@ def fundelete():
 def square():
         global screen
         vr = display_screen.get()
-        vr=int(vr)
+        vr=float(vr)
         a=vr*vr
         display_screen.delete(0,END)
         display_screen.insert(0,a)
